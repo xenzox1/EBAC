@@ -1,14 +1,13 @@
 $(document).ready(function() {
-    $('#task-form').submit(function(event) {
-        event.preventDefault();
-        var taskName = $('#new-task').val();
-        if (taskName !== '') {
-            $('.task-list').append('<li>' + taskName + '</li>');
-            $('#new-task').val('');
-        }
-    });
+    $('#phone').mask('(00) 00000-0000');
+    $('#cpf').mask('000.000.000-00', {reverse: true});
+    $('#cep').mask('00000-000');
     
-    $('.task-list').on('click', 'li', function() {
-        $(this).toggleClass('completed');
+    $('#registration-form').submit(function(event) {
+        event.preventDefault();
+        
+        const nome = $('#fullname').val();
+
+        alert(`Parabéns ${nome}!! Você conseguiu enviar um formulário.`)
     });
-});  
+});
